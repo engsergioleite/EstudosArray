@@ -1,0 +1,38 @@
+const alunos = ["sergio", "ana", "lana", "lais"]
+const notas = [10, 9, 8, 7]
+
+const ListaDeAlunosENotas = [alunos, notas] // criando a lista de duas dimensões
+
+console.log(ListaDeAlunosENotas)
+
+console.log(`O Aluno ${ListaDeAlunosENotas[0][0]} tirou a nota ${ListaDeAlunosENotas[1][0]}`) 
+
+//acessando a lista de duas dimensões e imprimidno de forma simples, abaixo, usaremos função
+
+function ExibeNomesENotas(aluno){
+    
+    // if (ListaDeAlunosENotas[0].includes(aluno)){ sintaxe antiga
+    
+        if (alunos.includes(aluno)) {
+        console.log(`O aluno ${aluno} consta na lista de alunos`)
+        
+       // const indice = ListaDeAlunosENotas[0].indexOf(aluno) // sintaxe correta, mas a melhor é a abaixo
+       // const alunos = ListaDeAlunosENotas[0]; segunda opção, mas a melhor ainda abaixo. 
+        //const notas = ListaDeAlunosENotas[1];
+
+        const [alunos, medias] = ListaDeAlunosENotas // a melhor sintaxe que atribui os indices para as variaveis e o array
+
+
+        const indice = alunos.indexOf(aluno);
+        const media = notas[indice];
+        console.log(indice)
+     //   console.log(`O Aluno ${aluno} tirou a média ${ListaDeAlunosENotas[1][indice]}`) sintaxe antiga
+            console.log(`O Aluno ${aluno} tirou a média ${media}`)
+     
+
+    } else {
+        console.log(`Aluno não encontrado na lista`)
+        }
+    }
+
+ExibeNomesENotas("lais")
